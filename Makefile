@@ -1,6 +1,8 @@
 CC=cc
+STD=-std=c99
 OPT=-O0 -ggdb3
-CFLAGS=$(OPT) `pkg-config --cflags libmongoc-1.0`
+WARN=-Wall -Wextra -Wpedantic
+CFLAGS=$(OPT) $(STD) $(WARN) `pkg-config --cflags libmongoc-1.0`
 LDFLAGS=`pkg-config --libs libmongoc-1.0`
 
 example: main.c
