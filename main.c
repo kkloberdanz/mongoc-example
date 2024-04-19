@@ -21,23 +21,6 @@ int main(void) {
         goto cleanup;
     }
 
-
-    // Set the version of the Stable API on the client
-    api = mongoc_server_api_new(MONGOC_SERVER_API_V1);
-    if (!api) {
-        fprintf(stderr, "Failed to create a MongoDB server API.\n");
-        rc = 1;
-        goto cleanup;
-    }
-
-    ok = mongoc_client_set_server_api(client, api, &error);
-    if (!ok) {
-        fprintf(stderr, "error: %s\n", error.message);
-        rc = 1;
-        goto cleanup;
-    }
-    
-
     // Get a handle on the "admin" database.
     database = mongoc_client_get_database(client, "admin");
     if (!database) {
