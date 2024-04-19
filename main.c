@@ -34,7 +34,7 @@ int main(void) {
         database, command, NULL, &reply, &error
     );
     if (!ok) {
-        fprintf(stderr, "error: %s", error.message);
+        fprintf(stderr, "error: %s\n", error.message);
         rc = 1;
         goto cleanup;
     }
