@@ -4,7 +4,6 @@ int main(void) {
     const char *uri_string = "mongodb://localhost:27017/";
     mongoc_client_t *client = NULL;
     bson_error_t error = {0};
-    mongoc_server_api_t *api = NULL;
     mongoc_database_t *database = NULL;
     bson_t *command = NULL;
     bson_t reply = BSON_INITIALIZER;
@@ -47,7 +46,6 @@ int main(void) {
 cleanup:
     bson_destroy(command);
     mongoc_database_destroy(database);
-    mongoc_server_api_destroy(api);
     mongoc_client_destroy(client);
     mongoc_cleanup();
 
