@@ -24,8 +24,14 @@ In order to run the program, make sure the linker can find the mongoc
 libraries by setting `LD_LIBRARY_PATH`. If you installed the C driver to
 `~/install`, then you can set the path like so:
 
+Linux:
 ```sh
 export LD_LIBRARY_PATH=$HOME/install/cdriver/lib
+```
+
+MacOS:
+```sh
+export DYLD_LIBRARY_PATH=$HOME/install/cdriver/lib
 ```
 
 After doing this, you can build like so:
